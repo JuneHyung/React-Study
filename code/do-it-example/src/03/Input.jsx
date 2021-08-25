@@ -7,10 +7,10 @@ class Input extends PureComponent {
     this.setRef = this.setRef.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  handleChnage(e) {
+  handleChange(e) {
     const { name, onChange } = this.props;
     if (onChange) {
-      onChange(name, e.target.value);
+      onChange(name, e.target.value)
     }
   }
   componentDidMount() {
@@ -56,9 +56,10 @@ Input.propTypes = {
   autoFocus: PropTypes.bool,
 };
 Input.defaultProps = {
-  onChange: () => { },
-  onFocus: () => { },
+  onChange: () => {},
+  onFocus: () => {},
   autoFocus: false,
   type: 'text',
 };
+
 export default Input;
