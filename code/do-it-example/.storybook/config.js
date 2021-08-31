@@ -5,7 +5,7 @@ import JSXAddon from 'storybook-addon-jsx';
 function loadStories() {
   const context = require.context('../src/stories', true, /Story\.jsx$/);
 
-  context.keys().forEach((srcFile) => {
+  context.keys().forEach(srcFile => {
     interopRequireDefault(context(srcFile));
   });
 }
