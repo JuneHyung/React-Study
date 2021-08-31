@@ -1,46 +1,64 @@
 {
-  "name": "do-it-example",
+  "name": "do-it-examples",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "axios": "0.18.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16.3": "^1.4.1",
+    "moment": "^2.24.0",
+    "next": "^8.1.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.7",
-    "shallow-equal": "^1.2.1",
-    "web-vitals": "^1.0.1"
+    "react-test-renderer": "^16.7.0",
+    "react-with-styles": "^3.2.1",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.1",
+    "redux-pack": "^0.1.5",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "selector-action": "^1.1.1"
   },
   "scripts": {
+    "dev": "next",
+    "predeploy": "yarn build-all",
+    "deploy": "firebase deploy",
+    "build-all": "yarn ssrbuild && yarn build-firebase",
+    "build-firebase": "cd \"./functions\" && yarn --ignore-engines",
+    "ssrbuild": "next build",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "mockserver": "json-server --watch --delay 500 --port 4000 mock/create.js",
+    "errorserver": "node mock/fake.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
     "@storybook/addon-actions": "^5.2.6",
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.2.6",
-    "storybook-addon-jsx": "^7.1.13"
+    "aphrodite": "^2.2.3",
+    "json-server": "^0.14.2",
+    "node-sass": "^4.11.0",
+    "react-with-styles-interface-aphrodite": "^5.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "sass-loader": "^7.1.0",
+    "storybook-addon-jsx": "^7.1.13",
+    "web-vitals": "^2.1.0"
   }
 }
