@@ -74,7 +74,7 @@ export default Input;
 
 ## 🌏 핵심 코드
 
-### 00. PureComponent
+### 👉 00. PureComponent
 
 ```jsx
 class Input extends PureComponent {
